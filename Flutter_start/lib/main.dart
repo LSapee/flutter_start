@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        //쿠쿠루삥뽕
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
@@ -113,3 +114,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+// 1. 규칙 : dart는 main() 함수가 처음으로 시작된다.
+// 2. 규칙 : dart는 메서드의 리턴타입을 정해도 되고 정하지 않아도 된다.
+// 3. 규칙 : dart는 모든 것들이 1급 객체이다. (어느 곳에도 포함되지 않고 최상위에 존재)
