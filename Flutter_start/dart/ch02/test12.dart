@@ -28,6 +28,6 @@ main() {
 
   c.name = "A8";
   print(c.name);
-  // 빈 생성자
+
   Car c2 = Car.origin();
 }
