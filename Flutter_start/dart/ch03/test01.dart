@@ -15,7 +15,15 @@ Future<String> download() {
   return value;
 }
 
+// main() async {
+//   // await를 걸떄는 main에 async를 걸기
+//   String value = await download(); //download는 빈박스
+//   print(value); //2
+// }
+
 main() {
-  download();
-  print("메인 종료"); //2
+  download().then((value) {
+    print(value);
+  });
+  print("메인종료");
 }
