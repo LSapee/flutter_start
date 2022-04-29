@@ -1,8 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(FirstApp());
+void main() {//main스레드는 runAppp을 실행시키고 종료가 됩니다.
+  runApp(FirstApp());//비동기로 실행됨 (이벤트 루프에 등록된다.)
+  sleep(Duration(seconds:3));
+  print("main종료");
 }
 //저장만 하면 화면이 리로드 됨, 핫 리로드
 class FirstApp extends StatelessWidget {
