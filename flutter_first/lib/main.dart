@@ -1,12 +1,11 @@
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {//main스레드는 runAppp을 실행시키고 종료가 됩니다.
   runApp(FirstApp());//비동기로 실행됨 (이벤트 루프에 등록된다.)
-  sleep(Duration(seconds:3));
-  print("main종료");
+  // sleep(Duration(seconds:3));
+  // print("main종료");
 }
 //저장만 하면 화면이 리로드 됨, 핫 리로드
 class FirstApp extends StatelessWidget {
@@ -35,21 +34,38 @@ class FirstApp extends StatelessWidget {
             title: Text("First App"),
             leading: Icon(Icons.menu),
           ),
-          body: Text("hello World"),
+          body: Column( //Column은 크기가 없다.
+            children: [//부모의 최대 크기까지 늘려라
+              Expanded(// 남는 공간 끝까지 확장해라
+                child: Container(
+                  color: Colors.yellow,
+                  height: 50,
+                ),
+              ),
+              Container(
+                color: Colors.blue,
+                height: 100,
+              ),
+              Container(
+                color: Colors.orange,
+                height: 100,
+              )
+            ],
+        ),
           floatingActionButton: FloatingActionButton(
             child: Text("button"),
             onPressed: () {
               print("button clicked");
             },
           ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: [
-            BottomNavigationBarItem(label:"hello",icon: Icon(Icons.access_alarm_rounded)),
-
-            BottomNavigationBarItem(label:"hello",icon: Icon(Icons.access_alarm_rounded)),
-        ],
-          backgroundColor: Colors.purple,
-        ),
+        // bottomNavigationBar: BottomNavigationBar(
+        //   items: [
+        //     BottomNavigationBarItem(label:"hello",icon: Icon(Icons.access_alarm_rounded)),
+        //
+        //     BottomNavigationBarItem(label:"hello",icon: Icon(Icons.access_alarm_rounded)),
+        // ],
+        //   backgroundColor: Colors.purple,
+        // ),
         ),
       ),
     );
