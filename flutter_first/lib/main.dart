@@ -38,18 +38,34 @@ class FirstApp extends StatelessWidget {
             children: [//부모의 최대 크기까지 늘려라
               Expanded(// 남는 공간 끝까지 확장해라
                 child: Container(
-                  color: Colors.yellow,
-                  height: 50,
+                  color: Colors.red,
+                  height: 100,
                 ),
               ),
               Container(
-                color: Colors.blue,
-                height: 100,
+                color: Colors.orange,
+                height: 105,
               ),
               Container(
-                color: Colors.orange,
-                height: 100,
+                color: Colors.yellow,
+                height: 105,
+              ),              Container(
+                color: Colors.green,
+                height: 105,
+              ),
+              Container(
+                color: Colors.blue,
+                height: 105,
+              ),
+              Container(
+                color: Colors.indigo,
+                height: 105,
+              ),
+              Container(
+                color: Colors.purple,
+                height: 105,
               )
+
             ],
         ),
           floatingActionButton: FloatingActionButton(
