@@ -34,40 +34,30 @@ class FirstApp extends StatelessWidget {
             title: Text("First App"),
             leading: Icon(Icons.menu),
           ),
-          body: Column( //Column은 크기가 없다.
-            children: [//부모의 최대 크기까지 늘려라
-              Expanded(// 남는 공간 끝까지 확장해라
-                child: Container(
-                  color: Colors.red,
-                  height: 100,
-                ),
-              ),
-              Container(
-                color: Colors.orange,
-                height: 105,
-              ),
-              Container(
-                color: Colors.yellow,
-                height: 105,
-              ),              Container(
-                color: Colors.green,
-                height: 105,
-              ),
-              Container(
-                color: Colors.blue,
-                height: 105,
-              ),
-              Container(
-                color: Colors.indigo,
-                height: 105,
-              ),
-              Container(
-                color: Colors.purple,
-                height: 105,
-              )
+          body:Container(
+            height:100,
+            child: Row( // 기본적으로 넓이를 가지고 있지 않다.
+              mainAxisAlignment:MainAxisAlignment.end,
+              children: [
+                Container(
+                    color: Colors.green,
+                  width: 100,
 
-            ],
+                ),
+
+                 Container(
+                      color: Colors.red,
+                   width: 100,
+                  ),
+
+               Container(
+                      color: Colors.orange,
+                 width: 100,
+                  ),
+              ],
         ),
+                ),
+
           floatingActionButton: FloatingActionButton(
             child: Text("button"),
             onPressed: () {
