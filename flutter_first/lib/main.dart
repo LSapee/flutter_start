@@ -13,67 +13,38 @@ class FirstApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    /* 빈 박스
-    return Container(
-      color: Colors.amber,
-    );*/
-    /* 안드로이드
+
     return MaterialApp(
-
-    );*/
-    /* IOS
-    return CupertinoApp(
-
-    );*/
-
-    return MaterialApp(// 안드로이드 앱 제작한다.
-      home: SafeArea(
-        child: Scaffold( // 기본 구조를 들고 있다.
-          appBar: AppBar(
-            backgroundColor: Colors.blue,
-            title: Text("First App"),
-            leading: Icon(Icons.menu),
-          ),
-          body:Container(
-            height:100,
-            child: Row( // 기본적으로 넓이를 가지고 있지 않다.
-              mainAxisAlignment:MainAxisAlignment.end,
-              children: [
-                Container(
-                    color: Colors.green,
-                  width: 100,
-
-                ),
-
-                 Container(
-                      color: Colors.red,
-                   width: 100,
-                  ),
-
-               Container(
-                      color: Colors.orange,
-                 width: 100,
-                  ),
-              ],
-        ),
-                ),
-
-          floatingActionButton: FloatingActionButton(
-            child: Text("button"),
-            onPressed: () {
-              print("button clicked");
-            },
-          ),
-        // bottomNavigationBar: BottomNavigationBar(
-        //   items: [
-        //     BottomNavigationBarItem(label:"hello",icon: Icon(Icons.access_alarm_rounded)),
-        //
-        //     BottomNavigationBarItem(label:"hello",icon: Icon(Icons.access_alarm_rounded)),
-        // ],
-        //   backgroundColor: Colors.purple,
-        // ),
+      home:SafeArea(
+        child: Scaffold(
+          body:HomeApp(),
         ),
       ),
+
+    );
+  }
+}
+
+class HomeApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    //mediaQuery가 첫번째 앱에서는 실행이 안됨.
+    var m = MediaQuery.of(context);
+    print("넓이 : ${m.size.width}");
+    print("높이 : ${m.size.height}");
+    print("safearea : ${m.padding.top}");
+    return Column(
+      children: [
+        Container(
+          height:(m.size.height-24)*0.7,
+          color: Colors.blue,
+        ),
+        Container(
+          height:(m.size.height-24)*0.3,
+          color: Colors.red,
+        //  Extended --- 영역을 비율로 분할
+        )
+      ],
     );
   }
 }
