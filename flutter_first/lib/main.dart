@@ -9,7 +9,9 @@ void main() {//main스레드는 runAppp을 실행시키고 종료가 됩니다.
 }
 //저장만 하면 화면이 리로드 됨, 핫 리로드
 class FirstApp extends StatelessWidget {
-  const FirstApp({Key? key}) : super(key: key);
+
+  final colorCodes = [600,500,300,200,100];
+  final data = ["가","나","다","라","마"];
 
   @override
   Widget build(BuildContext context) {
@@ -17,34 +19,30 @@ class FirstApp extends StatelessWidget {
     return MaterialApp(
       home:SafeArea(
         child: Scaffold(
-          body:HomeApp(),
+          body:ListView.builder(
+
+            itemCount: 5,
+            itemBuilder: (BuildContext context, int index){
+            return Column(
+
+              children: [
+                Container(
+                width:double.infinity,
+            padding: EdgeInsets.all(10),
+              height:50,
+              color: Colors.amber[colorCodes[index]],
+              child: Text("데이터 : ${data[index]}"),
+              ),
+              Container(
+                height: 10,
+              )
+              ],
+            );
+            },
+          ),
         ),
       ),
 
-    );
-  }
-}
-
-class HomeApp extends StatelessWidget{
-  @override
-  Widget build(BuildContext context){
-    //mediaQuery가 첫번째 앱에서는 실행이 안됨.
-    var m = MediaQuery.of(context);
-    print("넓이 : ${m.size.width}");
-    print("높이 : ${m.size.height}");
-    print("safearea : ${m.padding.top}");
-    return Column(
-      children: [
-        Container(
-          height:(m.size.height-24)*0.7,
-          color: Colors.blue,
-        ),
-        Container(
-          height:(m.size.height-24)*0.3,
-          color: Colors.red,
-        //  Extended --- 영역을 비율로 분할
-        )
-      ],
     );
   }
 }
