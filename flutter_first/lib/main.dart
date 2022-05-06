@@ -23,26 +23,30 @@ class FirstApp extends StatelessWidget {
 
             itemCount: 5,
             itemBuilder: (BuildContext context, int index){
-            return Column(
-
-              children: [
-                Container(
-                width:double.infinity,
-            padding: EdgeInsets.all(10),
-              height:50,
-              color: Colors.amber[colorCodes[index]],
-              child: Text("데이터 : ${data[index]}"),
-              ),
-              Container(
-                height: 10,
-              )
-              ],
-            );
+            return buildColumn(index);
             },
           ),
         ),
       ),
 
     );
+  }
+
+  Column buildColumn(int index) {
+    return Column(
+
+            children: [
+              Container(
+              width:double.infinity,
+          padding: EdgeInsets.all(10),
+            height:50,
+            color: Colors.amber[colorCodes[index]],
+            child: Text("데이터 : ${data[index]}"),
+            ),
+            Container(
+              height: 10,
+            )
+            ],
+          );
   }
 }
