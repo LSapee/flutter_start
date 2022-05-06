@@ -46,7 +46,7 @@ class FirstApp extends StatelessWidget {
       Container(
         height: 1,
         color: Colors.blue,
-      )
+      ,
       ],
     );
   }
