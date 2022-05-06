@@ -32,21 +32,22 @@ class FirstApp extends StatelessWidget {
     );
   }
 
-  Column buildColumn(int index) {
+  Widget buildColumn(int index) {
     return Column(
-
-            children: [
-              Container(
-              width:double.infinity,
-          padding: EdgeInsets.all(10),
-            height:50,
-            color: Colors.amber[colorCodes[index]],
-            child: Text("데이터 : ${data[index]}"),
-            ),
-            Container(
-              height: 10,
-            )
-            ],
-          );
+      children: [
+        ListTile(
+          title: Text("제목"),
+          subtitle: Text("부제목"),
+          leading: Icon(Icons.account_balance),
+  onTap:(){
+            print("눌러짐");
+  },
+        ),
+      Container(
+        height: 1,
+        color: Colors.blue,
+      )
+      ],
+    );
   }
 }
