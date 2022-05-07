@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 
 void main() {//main스레드는 runAppp을 실행시키고 종료가 됩니다.
@@ -19,35 +17,35 @@ class FirstApp extends StatelessWidget {
     return MaterialApp(
       home:SafeArea(
         child: Scaffold(
-          body:ListView.builder(
+          body:Container(
+            height:double.infinity,
+            width:double.infinity,
+            color:Colors.orange,
+            alignment: Alignment(1.0,1.0),
+            child: Container(
+              color: Colors.orange,
+              width:300,
+              child: Row(
+                children: [
+                  Text(
+                  "안녕하세요",
+                  style: TextStyle(
+                  color:Colors.red,
+                  fontSize: 30,
+                  fontWeight: FontWeight.w800,
+                  ),
 
-            itemCount: 5,
-            itemBuilder: (BuildContext context, int index){
-            return buildColumn(index);
-            },
+                  ),
+                ],
+              ),
+            ),
           ),
         ),
       ),
 
     );
-  }
 
-  Widget buildColumn(int index) {
-    return Column(
-      children: [
-        ListTile(
-          title: Text("제목"),
-          subtitle: Text("부제목"),
-          leading: Icon(Icons.account_balance),
-  onTap:(){
-            print("눌러짐");
-  },
-        ),
-      Container(
-        height: 1,
-        color: Colors.blue,
-      ,
-      ],
-    );
+
+
   }
 }
